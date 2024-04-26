@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "edf2a1a9-c68a-4c68-8fc5-41548af02139",
+		"name": "SpringBootPrueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34451607"
+	},
+	"item": [
+		{
+			"name": "Prueba Customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"customerid\": 3,\r\n        \"documentNumber\": \"1201201202\",\r\n        \"name\": \"Julieta\",\r\n        \"lastname\": \"Mendoza\",\r\n        \"age\": 28,\r\n        \"phonenumber\": \"0981920321\",\r\n        \"email\": \"julieta@hotmail.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sistema/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Movie Gen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/sistema/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Room",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomid\": 4,\r\n    \"name\": \"Sala Toda\",\r\n    \"number\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sistema/room",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Seat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\r",
+							"    \"seatid\": 1,\r",
+							"    \"number\": 10,\r",
+							"    \"rownumber\": 1,\r",
+							"    \"room\": {\r",
+							"        \"roomid\": 1,\r",
+							"        \"name\": \"Sala Principal\",\r",
+							"        \"number\": 1\r",
+							"    }\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"number\": 10,\r\n        \"rownumber\": 1,\r\n        \"room\": {\r\n            \"roomid\": 1,\r\n            \"name\": \"Sala Principal\",\r\n            \"number\": 1\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sistema/seat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"seat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieid\": 3,\r\n        \"name\": \"Cementerio\",\r\n        \"moviegen\": {\r\n            \"moviegenid\": 2,\r\n            \"name\": \"THRILLER\"\r\n        },\r\n        \"allowedAge\": 3\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sistema/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Bill B",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Booking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n        \"date\": \"2024-07-15\",\r\n        \"customer\": {\r\n            \"customerid\": 1,\r\n            \"documentNumber\": \"0958986804\",\r\n            \"name\": \"José\",\r\n            \"lastname\": \"Farias\",\r\n            \"age\": 27,\r\n            \"phonenumber\": \"0969801337\",\r\n            \"email\": \"josefariasromero@hotmail.com\"\r\n        },\r\n        \"seat\": {\r\n            \"seatid\": 1,\r\n            \"number\": 10,\r\n            \"rownumber\": 1,\r\n            \"room\": {\r\n                \"roomid\": 1,\r\n                \"name\": \"Sala Principal\",\r\n                \"number\": 1\r\n            }\r\n        },\r\n        \"billboard\": {\r\n            \"billboardid\": 2,\r\n            \"date\": \"2024-06-12\",\r\n            \"starttime\": \"14:39:30\",\r\n            \"endtime\": \"12:39:30\",\r\n            \"movie\": {\r\n                \"movieid\": 2,\r\n                \"name\": \"Cabaña\",\r\n                \"moviegen\": {\r\n                    \"moviegenid\": 2,\r\n                    \"name\": \"THRILLER\"\r\n                },\r\n                \"allowedAge\": 3\r\n            },\r\n            \"room\": {\r\n                \"roomid\": 1,\r\n                \"name\": \"Sala Principal\",\r\n                \"number\": 1\r\n            }\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sistema/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sistema",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
